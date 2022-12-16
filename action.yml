@@ -1,10 +1,26 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'github-secrets'
+description: 'Action to add a github secret to repository/environment'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  secret-level:  # id of input
+    description: 'Secret Level ( Repository or Environment secret)'
     required: true
-    default: '1000'
+    default: 'Repository'
+  secret-name:  # id of input
+    description: 'Name of the secret to be updated'
+    required: true
+  secret-value:  # id of input
+    description: 'Value of the secret to be updated'
+    required: true
+  org-name:  # id of input
+    description: 'Name of the organization in which secrets needs to be added'
+    required: true  
+  repo-name:  # id of input
+    description: 'Name of the repository in which secrets needs to be added'
+    required: true    
+  token:  # id of input
+    description: 'Github Token'
+    required: true   
+    default: ${{ secrets.GITHUB_TOKEN }}
 outputs:
   time: # output will be available to future steps
     description: 'The current time after waiting'
