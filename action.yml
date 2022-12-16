@@ -21,8 +21,8 @@ inputs:
     description: 'Github Token'
     required: true   
 outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  message: # output will be available to future steps
+    description: 'Success message'
 runs:
   using: 'node16'
   main: 'dist/index.js'

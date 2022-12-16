@@ -9701,15 +9701,24 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 const core = __nccwpck_require__(2186);
-const github = __nccwpck_require__(5438);
+const { GitHub } = __nccwpck_require__(5438);
 const _sodium = __nccwpck_require__(713)
-const secretValue = core.getInput('secret-value');
-const secretLevel = core.getInput('secret-level');
-const secretName = core.getInput('secret-name');
-const orgName = core.getInput('org-name');
-const repoName = core.getInput('repo-name');
-const myToken = core.getInput('token');
-const octokit = github.getOctokit(myToken)
+// const secretValue = core.getInput('secret-value');
+// const secretLevel = core.getInput('secret-level');
+// const secretName = core.getInput('secret-name');
+// const orgName = core.getInput('org-name');
+// const repoName = core.getInput('repo-name');
+// const myToken = core.getInput('token');
+// const octokit = github.getOctokit(myToken);
+
+const secretValue = 'this-is-a-test-id';
+const secretLevel = 'Repository';
+const secretName = 'NETLIFY_SITE_ID';
+const orgName = 'amitakesai';
+const repoName = 'gh-actions-wf';
+const myToken = 'gh-actions-wf';
+const github = new GitHub(process.env.GITHUB_TOKEN);
+const octokit = github.getOctokit(myToken);
 
 const run = async () => {
   try {
