@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/actions/javascript-action#readme",
   "dependencies": {
-    "@actions/core": "^1.10.0"
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.0.0",
+    "libsodium-wrappers": "^0.7.10"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.31.1",
