@@ -7,7 +7,7 @@ const secretName = core.getInput('secret-name');
 const orgName = core.getInput('org-name');
 const repoName = core.getInput('repo-name');
 const myToken = core.getInput('token');
-const octokit = github.getOctokit(myToken)
+const octokit = github.getOctokit(myToken);
 
 const run = async () => {
   try {

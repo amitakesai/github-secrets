@@ -23,7 +23,8 @@ jobs:
     - uses: ./
       with:
         secret-name: NETLIFY_SITE_ID
-        secret-value: "this-is-a-test-id"
-        org-name: "amitakesai"
-        repo-name: "gh-actions-wf"
+        secret-value: this-is-a-test-id
+        org-name: amitakesai
+        repo-name: gh-actions-wf
         token: ${{ secrets.GITHUB_TOKEN }}
+
