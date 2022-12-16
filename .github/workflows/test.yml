@@ -27,5 +27,5 @@ jobs:
         secret-level: Repository
         org-name: amitakesai
         repo-name: gh-actions-wf
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.MY_PAT }}
 
