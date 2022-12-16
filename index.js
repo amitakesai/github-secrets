@@ -6,10 +6,11 @@ const secretLevel = core.getInput('secret-level');
 const secretName = core.getInput('secret-name');
 const orgName = core.getInput('org-name');
 const repoName = core.getInput('repo-name');
+const token = core.getInput('token');
 
 const run = async () => {
   try {
-    const octokit = new github.getOctokit(process.env.GITHUB_TOKEN);
+    const octokit = github.getOctokit(token);
     //Check if libsodium is ready and then proceed.
     const publicKey = await octokit.request('GET /repos/'+orgName+'/'+ repoName+'/actions/secrets/public-key', {
       owner: orgName,
