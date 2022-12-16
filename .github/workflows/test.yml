@@ -26,3 +26,4 @@ jobs:
         secret-value: "this-is-a-test-id"
         org-name: "amitakesai"
         repo-name: "gh-actions-wf"
+        token: ${{ secrets.GITHUB_TOKEN }}
