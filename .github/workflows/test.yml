@@ -28,4 +28,13 @@ jobs:
         org-name: amitakesai
         repo-name: gh-actions-wf
         token: ${{ secrets.MY_PAT }}
+    - uses: ./
+      with:
+        secret-name: NETLIFY_SITE_ID
+        secret-value: this-is-a-test-id
+        secret-level: Environment
+        env-name: 
+        org-name: amitakesai
+        repo-name: gh-actions-wf
+        token: ${{ secrets.MY_PAT }}
 

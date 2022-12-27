@@ -11,6 +11,8 @@ inputs:
   secret-value:  # id of input
     description: 'Value of the secret to be updated'
     required: true
+  env-name:  # id of input
+    description: 'Name of the Environment'
   org-name:  # id of input
     description: 'Name of the organization in which secrets needs to be added'
     required: true  
