@@ -1,4 +1,5 @@
-const encrypt = async (key, secret) {
+const _sodium = require('libsodium-wrappers')
+const encrypt = async (key, secret) => {
   if (typeof key !== 'string') {
     throw new Error('key not a string');
   }
