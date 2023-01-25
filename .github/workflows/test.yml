@@ -32,9 +32,9 @@ jobs:
       with:
         secret-name: NETLIFY_SITE_ID
         secret-value: this-is-a-test-id
-        secret-level: Environment
-        env-name: 
-        org-name: amitakesai
-        repo-name: gh-actions-wf
+        secret-level: environment
+        env-name: Staging
+        org-name: united-talent-agency
+        repo-name: test-uta-automate
         token: ${{ secrets.MY_PAT }}
 
