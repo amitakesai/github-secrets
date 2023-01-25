@@ -9,7 +9,6 @@ const encrypt = async (key, secret) => {
   let binsec = sodium.from_string(secret)
   let encBytes = sodium.crypto_box_seal(binsec, binkey)
   let output = await sodium.to_base64(encBytes, sodium.base64_variants.ORIGINAL) 
-  console.log("Output",output)
   return output;
   };
   

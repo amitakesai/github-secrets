@@ -31,11 +31,14 @@ const run = async () => {
         owner: orgName,
         repo: repoName
       });
+      core.info(`Repo Id: ${repoId.data.id}`)
       const repoPublicKey = await octokit.request('GET /repositories/'+repoId.data.id+'/environments/'+envName+'/secrets/public-key', {
         repository_id: repoId.data.id,
         environment_name: envName
       })
+      core.info(`repo public key: ${repoPublicKey.data.key}`)
       const output = await encrypt(repoPublicKey.data.key,secretValue)
+      core.info(`Encrypted value: ${output}`);
       const result = await octokit.request('PUT /repositories/'+repoId.data.id+'/environments/'+envName+'/secrets/'+ secretName, {
         repository_id: repoId.data.id,
         environment_name: envName,
@@ -43,6 +46,7 @@ const run = async () => {
         encrypted_value: output,
         key_id: repoPublicKey.data.key_id
       })
+      core.info(`result status: ${result.status}`)
       core.setOutput('message', result.status == 204 ? "Secret Updated" : "Secret Created" );
     }
   } catch (error) {
