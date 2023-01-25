@@ -20,14 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./
-      with:
-        secret-name: NETLIFY_SITE_ID
-        secret-value: this-is-a-test-id
-        secret-level: Repository
-        org-name: amitakesai
-        repo-name: gh-actions-wf
-        token: ${{ secrets.MY_PAT }}
+    # - uses: ./
+    #   with:
+    #     secret-name: NETLIFY_SITE_ID
+    #     secret-value: this-is-a-test-id
+    #     secret-level: Repository
+    #     org-name: amitakesai
+    #     repo-name: gh-actions-wf
+    #     token: ${{ secrets.MY_PAT }}
     - uses: ./
       with:
         secret-name: NETLIFY_SITE_ID
